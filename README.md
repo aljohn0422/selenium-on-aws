@@ -4,6 +4,11 @@ The latest Chrome version (90.0.4430 as of this writing) is somehow not yet supp
 
 Eventually AWS lambda might support the latest version of Chrome, but just not yet. Using older versions of Chrome is the way to go now. See instructions below.
 
+# Develop
+1. The entrypoint is `app.py`. As a code example, it goes to www.google.com and print out the title.
+2. Run `sh test.sh` to test locally, or edit the command as you wish.
+    - Note that you have to put `--entrypoint=""` in `docker run` command to overwrite the default `ENTRYPOINT` in the base python image provided by AWS lambda.
+
 # Deploy to AWS Lambda as a container
 1. Go to **AWS Elastic Container Registry (ECS)**, select or create a repository, click "View push commands".
 2. Follow the instructions in "View push commands" to push your container to ECS.
